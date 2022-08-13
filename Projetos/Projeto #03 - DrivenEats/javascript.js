@@ -173,8 +173,8 @@ function cta_click(){
     confirm_card.classList.remove('display-none');
 
     //calc total price
-    let total = food_price + drink_price + desert_price;
-    document.querySelector(".confirm .total_price").innerHTML = total.toFixed(2);
+    total = food_price + drink_price + desert_price;
+    document.querySelector(".confirm .total_price").innerHTML = total.toFixed(2).replace('.',',');
 
 }
 
@@ -185,7 +185,18 @@ function sendWhatsApp(){
 
     //preferência pagamento PIX ou cartão
 
-    let link = `https://api.whatsapp.com/send?phone=5535991819444&text=*PEDIDO*%20-%20*${userName}*%0A%0A${food_name}:%20R$${food_price}%0A${drink_name}:%20R$${drink_price}%0A${desert_name}:%20R$${desert_price}%0A%0AEndereço:%20${adress}%0A%0A_Muito%20Obrigado%20Pelo%20Seu%20Pedido_`;
+    //today data
+    var today = new Date();
+    var dd = String(today.getDate()).padStart(2, '0');
+    var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    var yyyy = today.getFullYear();
+    today = dd + '/' + mm + '/' + yyyy;
+
+    //encodeURI(string);
+    //let message = "my message" 
+    //let urlmessage = encodeURI(message);
+
+    let link = `https://api.whatsapp.com/send?phone=5535991819444&text=*PEDIDO*%20-%20*${userName}*%0A_${today}_%0A%0A${food_name}:%20R$${food_price}%0A${drink_name}:%20R$${drink_price}%0A${desert_name}:%20R$${desert_price}%0A%0A*TOTAL*:%20${total}%0A%0AEndereço:%20${adress}%0A%0A_Muito%20Obrigado%20Pelo%20Seu%20Pedido_`;
     window.open(link);
 }
 
