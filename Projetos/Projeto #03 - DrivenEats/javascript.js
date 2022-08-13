@@ -188,3 +188,37 @@ function sendWhatsApp(){
     let link = `https://api.whatsapp.com/send?phone=5535991819444&text=*PEDIDO*%20-%20*${userName}*%0A%0A${food_name}:%20R$${food_price}%0A${drink_name}:%20R$${drink_price}%0A${desert_name}:%20R$${desert_price}%0A%0AEndereço:%20${adress}%0A%0A_Muito%20Obrigado%20Pelo%20Seu%20Pedido_`;
     window.open(link);
 }
+
+function reset(){
+
+    //reset food section
+    const cardselected_food = document.querySelector("#food .card-selected");
+    const icon_showing = document.querySelector("#food .card-selected ion-icon");
+
+    cardselected_food.classList.remove("card-selected");
+    icon_showing.classList.add("display-none");
+
+    //reset drink section
+    const cardselected_drink = document.querySelector("#drink .card-selected");
+    const icon_showing2 = document.querySelector("#drink .card-selected ion-icon");
+
+    cardselected_drink.classList.remove("card-selected");
+    icon_showing2.classList.add("display-none");
+
+    //reset desert section
+    const cardselected_desert = document.querySelector("#desert .card-selected");
+    const icon_showing3 = document.querySelector("#desert .card-selected ion-icon");
+
+    cardselected_desert.classList.remove("card-selected");
+    icon_showing3.classList.add("display-none");
+    
+    //display none em card confirm
+    const confirm_card = document.querySelector('.confirm_dad');
+    confirm_card.classList.add('display-none');
+
+    //desativar button
+    const blockMyButton = document.querySelector('.CTA');
+    blockMyButton.classList.remove('CTA-active');
+    blockMyButton.innerHTML = "Selecione os 3 itens para fechar o pedido";
+    
+}

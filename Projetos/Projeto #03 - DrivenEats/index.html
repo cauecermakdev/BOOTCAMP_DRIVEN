@@ -33,7 +33,7 @@
             <!--div with cards of foods-->
             <div class="display-flex-row" id="cards-section1">
                 <!--card of section-->
-                <div class="card1_food alignitemscenter card borderradius9 backgroundcolor-white display-flex-column" id="card-sells" onclick="select_food('.card1_food')">
+                <div class="card1_food card borderradius9 backgroundcolor-white display-flex-column" id="card-sells" onclick="select_food('.card1_food')">
                     <img class ="borderradius9" id="img-card"  src="./img/croissant.jpg">
                     <div class="display-flex-column start" id="description">
                         <h3 class="size16 fontcolor-black2 fontweight700">Nome do prato1</h3>
@@ -180,13 +180,13 @@
             <div><p class="desert_name_confirm">Pudim</p><p class="desert_price">7,90</p></div>
             <div><p class="fontweight700">TOTAL</p><p class="total_price fontweight700">R$27,70</p></div>
             <button class="fontweight700 size22" onclick="sendWhatsApp();">Tudo Certo, pode pedir!</button>
-            <p class="size20 fontweight700">Cancelar</p>
+            <p class="size20 fontweight700" onclick="reset();">Cancelar</p>
         </div>
     </div>
 
 
     <div class="footer centralized">
-        <button class="CTA size20" onclick="cta_click();">Selecione os 3 itens para fechar o pedido</button>    
+        <button class="CTA size20" onclick="cta_click();">Selecione os 3 itens<br>para fechar o pedido</button>    
     </div>
 
     <!--linking my javascript-->
