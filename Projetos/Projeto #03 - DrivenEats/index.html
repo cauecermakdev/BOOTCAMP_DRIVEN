@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, 
+    minimum-scale=1.0, maximum-scale=1.0">
+    <title>DrivenEats</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+
+    <!--link to fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    
+    <div class="naveg-app">
+        <h1>DrivenEats</h1>
+        <p>Sua comida em 6 minutos</p>
+    </div>
+
+    <!--all content - 3 choices-->
+    <div class="content display-flex-column width-content" id="all-content">
+        <!--section 1-->
+        <div class=" display-flex-column" id = "food">
+            <h2 class="size26 fontcolor-black2 font-family-title">
+                Primeiro, seu prato
+            </h2>
+            
+            <!--div with cards of foods-->
+            <div class="display-flex-row" id="cards-section1">
+                <!--card of section-->
+                <div class="card1_food alignitemscenter card borderradius9 backgroundcolor-white display-flex-column" id="card-sells" onclick="select_food('.card1_food')">
+                    <img class ="borderradius9" id="img-card"  src="./img/croissant.jpg">
+                    <div class="display-flex-column start" id="description">
+                        <h3 class="size16 fontcolor-black2 fontweight700">Nome do prato1</h3>
+                        <p class="size15 fontcolor-gray fontweight300">Description of food</p>
+                        <div class="display-flex-row width100 spacebet-h ">
+                            <h3 class="size16 fontcolor-black1">R$<span class="price">13,52</span></h3>
+                            <ion-icon class ="display-none size16 fontcolor-secundary " name="checkmark-circle" ></ion-icon>
+                        </div>
+                    </div>
+                </div>
+
+                <!--card of section-->
+                <div class="card2_food alignitemscenter card borderradius9 backgroundcolor-white display-flex-column" id="card-sells" onclick="select_food('.card2_food')">
+                    <img class ="borderradius9 " id="img-card"  src="./img/croissant.jpg">
+                    <div class="display-flex-column start" id="description">
+                        <h3 class="size16 fontcolor-black2 fontweight700">Nome do prato2</h3>
+                        <p class="size15 fontcolor-gray fontweight300">Description of food</p>
+                        <div class="display-flex-row width100 spacebet-h ">
+                            <h3 class="size16 fontcolor-black1">R$<span class="price">12,50</span></h3>
+                            <ion-icon class="size16 fontcolor-secundary display-none" name="checkmark-circle" ></ion-icon>
+                        </div>
+                    </div>
+                </div>
+
+                <!--card of section-->
+                <div class="card3_food alignitemscenter card borderradius9 backgroundcolor-white display-flex-column" id="card-sells" onclick="select_food('.card3_food')">
+                    <img class ="borderradius9 " id="img-card"  src="./img/croissant.jpg">
+                    <div class="display-flex-column" id="description">
+                        <h3 class="size16 fontcolor-black2 fontweight700">Nome do prato3</h3>
+                        <p class="size15 fontcolor-gray fontweight300">Description of food</p>
+                        <div class="display-flex-row width100 spacebet-h ">
+                            <h3 class="size16 fontcolor-black1">R$<span class="price">11,50</span></h3>
+                            <ion-icon class="size16 fontcolor-secundary display-none" name="checkmark-circle" ></ion-icon>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div><!--end of section1-->
+
+        <!--section 2-->
+        <div class=" display-flex-column" id = "drink">
+            <h2 class="size26 fontcolor-black2 font-family-title">Primeiro, seu prato</h2>
+            <div class="display-flex-row" id="cards-section1">
+                <!--card of section-->
+                <div class="card1_drink alignitemscenter card borderradius9 backgroundcolor-white display-flex-column" id="card-sells"  onclick="select_drink('.card1_drink')">
+                    <img class ="borderradius9 " id="img-card"  src="./img/croissant.jpg">
+                    <div class="display-flex-column" id="description">
+                        <h3 class="size16 fontcolor-black2 fontweight700">Nome do drink1</h3>
+                        <p class="size15 fontcolor-gray fontweight300">Description of food</p>
+                        <div class="display-flex-row width100 spacebet-h ">
+                            <h3 class="size16 fontcolor-black1">R$<span class="price">10,50</span></h3>
+                            <ion-icon class="size16 fontcolor-secundary display-none" name="checkmark-circle" ></ion-icon>
+                        </div>
+                    </div>
+                </div>
+
+                <!--card of section-->
+                <div class="card2_drink alignitemscenter card borderradius9 backgroundcolor-white display-flex-column" id="card-sells" onclick="select_drink('.card2_drink')">
+                    <img class ="borderradius9 " id="img-card"  src="./img/croissant.jpg">
+                    <div class="display-flex-column" id="description">
+                        <h3 class="size16 fontcolor-black2 fontweight700">Nome do drink2</h3>
+                        <p class="size15 fontcolor-gray fontweight300">Description of food</p>
+                        <div class="display-flex-row width100 spacebet-h ">
+                            <h3 class="size16 fontcolor-black1">R$<span class="price">14,50</span></h3>
+                            <ion-icon class="size16 fontcolor-secundary display-none" name="checkmark-circle" ></ion-icon>
+                        </div>
+                    </div>
+                </div>
+
+                <!--card of section-->
+                <div  class="card3_drink alignitemscenter card borderradius9 backgroundcolor-white display-flex-column" id="card-sells" onclick="select_drink('.card3_drink')">
+                    <img class ="borderradius9 " id="img-card"  src="./img/croissant.jpg">
+                    <div class="display-flex-column" id="description">
+                        <h3 class="size16 fontcolor-black2 fontweight700">Nome do drink3</h3>
+                        <p class="size15 fontcolor-gray fontweight300">Description of food</p>
+                        <div class="display-flex-row width100 spacebet-h ">
+                            <h3 class="size16 fontcolor-black1">R$<span class="price">14,40</span></h3>
+                            <ion-icon class="size16 fontcolor-secundary display-none" name="checkmark-circle" ></ion-icon>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div><!--end of section1-->
+        
+        <!--section 3-->
+        <div class=" display-flex-column" id ="desert" >
+                    <h2 class="size26 fontcolor-black2 font-family-title">Primeiro, seu prato</h2>
+                    <div class="display-flex-row" id="cards-section1">
+                        <!--card of section-->
+                        <div class="card1_desert alignitemscenter card borderradius9 backgroundcolor-white display-flex-column" id="card-sells" onclick="select_desert('.card1_desert')">
+                            <img class ="borderradius9 " id="img-card"  src="./img/croissant.jpg">
+                            <div class="display-flex-column" id="description">
+                                <h3 class="size16 fontcolor-black2 fontweight700">Nome do desert1</h3>
+                                <p class="size15 fontcolor-gray fontweight300">Description of food</p>
+                                <div class="display-flex-row width100 spacebet-h ">
+                                    <h3 class="size16 fontcolor-black1">R$<span class="price">14,30</span></h3>
+                                    <ion-icon class="size16 fontcolor-secundary display-none" name="checkmark-circle" ></ion-icon>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <!--card of section-->
+                        <div class="card2_desert alignitemscenter card borderradius9 backgroundcolor-white display-flex-column" id="card-sells" onclick="select_desert('.card2_desert')">
+                            <img class ="borderradius9 " id="img-card"  src="./img/croissant.jpg">
+                            <div class="display-flex-column" id="description">
+                                <h3 class="size16 fontcolor-black2 fontweight700">Nome do desert2</h3>
+                                <p class="size15 fontcolor-gray fontweight300">Description of food</p>
+                                <div class="display-flex-row width100 spacebet-h ">
+                                    <h3 class="size16 fontcolor-black1">R$<span class="price">14,20</span></h3>
+                                    <ion-icon class="size16 fontcolor-secundary display-none" name="checkmark-circle" ></ion-icon>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <!--card of section-->
+                        <div class="card3_desert alignitemscenter card borderradius9 backgroundcolor-white display-flex-column" id="card-sells" onclick="select_desert('.card3_desert')">
+                            <img class ="borderradius9 " id="img-card"  src="./img/croissant.jpg">
+                            <div class="display-flex-column" id="description">
+                                <h3 class="size16 fontcolor-black2 fontweight700">Nome do desert3</h3>
+                                <p class="size15 fontcolor-gray fontweight300">Description of desert3</p>
+                                <div class="display-flex-row width100 spacebet-h ">
+                                    <h3 class="size16 fontcolor-black1">R$<span class="price">14,10</span></h3>
+                                    <ion-icon class="size16 fontcolor-secundary display-none" name="checkmark-circle" ></ion-icon>
+                                </div>
+                            </div>
+                        </div>
+        
+                    </div>
+        
+        </div><!--end of section1-->
+
+    </div>
+    
+    <!-- confirm card-->
+    <div class="display-none confirm_dad">
+        <div class="confirm borderradius9 display-flex-column alignitemscenter fontcolor-white">
+            <h3 class="fontweight700">Confirme seu pedido</h3>
+            <div><p class="food_name_confirm">Frango Yi Yang</p><p class="food_price">14,90</p></div>
+            <div><p class="drink_name_confirm">Coquinha gelada</p><p class="drink_price">4,90</p></div>
+            <div><p class="desert_name_confirm">Pudim</p><p class="desert_price">7,90</p></div>
+            <div><p class="fontweight700">TOTAL</p><p class="total_price fontweight700">R$27,70</p></div>
+            <button class="fontweight700 size22" onclick="sendWhatsApp();">Tudo Certo, pode pedir!</button>
+            <p class="size20 fontweight700">Cancelar</p>
+        </div>
+    </div>
+
+
+    <div class="footer centralized">
+        <button class="CTA size20" onclick="cta_click();">Selecione os 3 itens para fechar o pedido</button>    
+    </div>
+
+    <!--linking my javascript-->
+    <script src="javascript.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+
+</body>
+</html>

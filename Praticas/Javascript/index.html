@@ -1,0 +1,171 @@
+<!--Terceira Semana - Terça-Feira -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        ion-icon{
+            
+            color:green;
+        }
+
+        #demo{
+            color:blue;
+        }
+
+        .circle{
+            width:56px;
+            height:56px;
+            background-color:green;
+            border-radius: 50%;
+            margin:10px;
+        }
+
+        .stories{
+            background-color:gray;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            width:200px;
+            margin:0px auto;
+            overflow:scroll;
+            overflow-y:hidden;
+            box-sizing: border-box;
+         
+        }
+        .stories-esconde{
+            height:74px;
+            box-sizing: border-box;
+            background-color: yellow;
+            overflow:hidden;
+            
+        }
+        
+        .pai{
+            position:relative;
+            width:200px;
+            top:100px;
+            height: 200px;
+            background:brown;
+            color:white;
+        }
+
+        .filho{
+            position:absolute;
+            top:30px;
+            width:100px;
+            height: 100px;
+            background:black;
+            color:white;
+        }
+
+        .studied{
+            margin-top:50px 50px;
+            border:1px solid black;             
+            position:relative;
+        }
+
+        .studies{
+            display:flex;
+            border:5px solid red;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <h1 id="demo">The Document Object</h1>
+    
+    <h2>The getElementById() Method</h2>
+    <div id="demo"></div>
+
+    <button onclick="tored();">change to red</button>
+
+    <div class="stories-esconde">
+    <div class="stories">
+        <div>
+            <div class="circle"></div>
+        </div>
+        <div>
+            <div class="circle"></div>
+        </div>
+        <div>
+            <div class="circle"></div>
+        </div>
+        <div>
+            <div class="circle"></div>
+        </div>
+        <div>
+            <div class="circle"></div>
+        </div>
+    </div>
+    </div>
+
+    <!--studying position-->
+    <!--
+    
+    <div class="studies">
+    <div class="studied">
+        <h1>uma div dentro da outra</h1>
+        <div class="pai">pai
+            <div class="filho">filho</div>
+        </div>  
+    </div>  
+
+
+    <div class="studied">
+        <h1>uma div dps a outra</h1>
+        <div class="pai">irmão1</div>
+        <div class="filho">irmão2</div>  
+    </div>  
+
+    </div>-->
+    <!--definindo linguagem de script, pois tem varias-->
+    <!--
+    <script type="text/javascript">
+     
+        alert("mensagem");
+        alert("Meu primeiro Alert");
+    </script>
+    -->
+
+    <div class="aqui" onclick ="select('ion-icon');" style="width:100px; height:100px; background-color:#fafafa;">
+        <ion-icon  class="icon" onclick ="select('.icon');" name="checkmark-circle"></ion-icon>
+    </div>
+
+    <div class="aqui" onclick ="select('ion-icon');" style="width:100px; height:100px; background-color:#fafafa;">
+        <ion-icon  class="icon" onclick ="select('.icon');" name="checkmark-circle"></ion-icon>
+    </div>
+
+    <div class="aqui" onclick ="select('ion-icon');" style="width:100px; height:100px; background-color:#fafafa;">
+        <ion-icon  class="icon" onclick ="select('.icon');" name="checkmark-circle"></ion-icon>
+    </div>
+
+    <div class="txts">
+        <p class="txt">aqui e onde esta meu texto texto texto</p>
+        <p class="txt">aqui e onde esta meu texto texto texto</p>
+        <p cass="txt">aqui e onde esta meu texto texto texto</p>
+        <p class="txt">aqui e onde esta meu texto texto texto</p>
+    </div>
+
+    <p class="texto">Aqui é meu texto</p>
+    <button onclick = foi()>mudar texto</button>
+
+
+    <button onclick="prompt();" class="botao">Entrar</button>
+    <button onclick="prompt('Aspas simples');alert('chupa esse ponto e virgula')" class"botao">Entrar2</button>
+    <button onclick="nomedafuncao()" class="botao">Entra3</button>
+    <button onclick="pegaid('.pai')" class="botao">Entra3</button>
+    <button onclick="printhtml('.txts')" class="botao">print html</button>
+    <button id="iddesejado" class="botao">pegaid</button>
+    
+    <script src="script.js"></script>
+    <!--icons-->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
