@@ -20,17 +20,17 @@ function verifyAllSelected(){
     }
 }
 
-function select(nomeClasse){
+function select(clickedObj){
         //getting the name of the class
-        let nameclass = nomeClasse.className;
+        let nameclass = clickedObj.className;
         //a class só pega no seletor com ponto. ex: ".nomedaclasse"
         //Se o elemento tiver varias class, ela tem que estar formatada sem espaço entre elas...
         //ex: ".class1.class2.class3..."
         //split na nameclass e fazer um for concatenando com pontos
-        let vnameclass = nameclass.split(" ");
+        let vector_nameclass = nameclass.split(" ");
         nameclass = "";
-        for(let i=0; i<vnameclass.length;i++){
-            nameclass += "." + vnameclass[i] + "";
+        for(let i=0; i<vector_nameclass.length;i++){
+            nameclass += "." + vector_nameclass[i] + "";
         }
     
         //nameclass = nameclass.replace("  "," .");
@@ -38,7 +38,7 @@ function select(nomeClasse){
     
     
         //getting the section <<food/drink/desert>>
-        const section = nomeClasse.parentElement.parentElement.id;
+        const section = clickedObj.parentElement.parentElement.id;
     
         //getting the card
         const seletor_card =  "#"+ section + " .card-selected";
@@ -60,7 +60,7 @@ function select(nomeClasse){
     
         let seletorCheck = nameclass + " ion-icon";
         //alert(seletorCheck);
-        //let seletorCheck = nomeClasse + " ion-icon";
+        //let seletorCheck = clickedObj + " ion-icon";
         check = document.querySelector(seletorCheck);
         check.classList.remove('display-none');
     
@@ -69,23 +69,12 @@ function select(nomeClasse){
     
         //save the name of the food
         //  .card1_food div h3
-        //const seletor_food = nomeClasse + " div h3 .food_name_card";
+        //const seletor_food = clickedObj + " div h3 .food_name_card";
         const seletor_food = nameclass + " #description > h3";
-        food_name = document.querySelector(seletor_food).innerHTML;
+        section_name = document.querySelector(seletor_food).innerHTML;
     
-        /*
-        if(section=="food"){
-            //colocar esse food name no confirm card
-            document.querySelector(".confirm div .food_name_confirm").innerHTML = food_name;
-        }else if(section=="drink"){
-             //colocar esse food name no confirm card
-             document.querySelector(".confirm div .drink_name_confirm").innerHTML = food_name;
-        }*/
-
-          //colocar esse food name no confirm card
-          document.querySelector(`.confirm div .${section}_name_confirm`).innerHTML = food_name;
-    
-        
+        //colocar esse food name no confirm card
+        document.querySelector(`.confirm div .${section}_name_confirm`).innerHTML = section_name;
     
         //getting food price
         const seletor = nameclass + " .price";
@@ -100,59 +89,20 @@ function select(nomeClasse){
         price_number = parseFloat(price.replace(',','.'));
         
         if(section =="food"){
+            food_name = section_name;
             food_price = price_number;
         }else if(section =="drink"){
             drink_price = price_number;
+            drink_name = section_name;
         }else if(section =="desert"){
             desert_price = price_number;
+            desert_name = section_name;
         }
 
         verifyAllSelected();
 }
 
-/*
-function select_food(nomeClasse){
-    
-    select(nomeClasse);
-
-    //free button when 3 are selected
-    verifyAllSelected();
-
-}
-
-
-function select_drink(nomeClasse){
-
-    select(nomeClasse);
-
-    //free button when 3 are selected
-    verifyAllSelected();
-
-}
-
-
-function select_desert(nomeClasse){
-
-    select(nomeClasse);
-
-    //free button when 3 are selected
-     verifyAllSelected();
-}
-*/
-
 function cta_click(){
-    
-    //pegar a comida selecionada 
-    //pegar o preco da comida
-
-    //pegar o drink secionado
-    //pegar o preco do drink
-    
-    //pegar o desert selecionado
-    //pegar o preco da desert
-
-    //somar todos precos 
-    //e colocar na frente do total
 
     //mostrar card
     const confirm_card = document.querySelector('.confirm_dad');
@@ -177,10 +127,13 @@ function sendWhatsApp(){
     var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
     var yyyy = today.getFullYear();
     today = dd + '/' + mm + '/' + yyyy;
+    
+
+    
 
     //encodeURI(string);
     //let message = `*PEDIDO*%20-%20*${userName}*%0A_${today}_%0A%0A${food_name}:%20R$${food_price}%0A${drink_name}:%20R$${drink_price}%0A${desert_name}:%20R$${desert_price}%0A%0A*TOTAL*:%20${total}%0A%0AEndereço:%20${adress}%0A%0A_Muito%20Obrigado%20Pelo%20Seu%20Pedido_`; 
-    let message = `*Olá, gostaria de fazer o pedido:*\n- Prato: ${food_name}\n- Bebida: ${drink_name}\n- Sobremesa: ${desert_name}\n*TOTAL*: R$ ${total.toFixed(2)}\n\nNome: ${userName}\nEndereço: ${adress}\n\n_Muito Obrigado Pelo Seu Pedido_\n_${today}_`; 
+    let message = `*Olá, gostaria de fazer o pedido:*\n- Prato: ${food_name}\n- Bebida: ${drink_name}\n- Sobremesa: ${desert_name}\n*TOTAL*: R$ ${total.toFixed(2).replace('.',',')}\n\nNome: ${userName}\nEndereço: ${adress}\n\n_Muito Obrigado Pelo Seu Pedido_\n_${today}_`; 
     let urlmessage = encodeURI(message);
 
 

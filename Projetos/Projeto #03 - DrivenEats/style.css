@@ -343,17 +343,31 @@ body{
 
 
 @media(min-width:600px){
+    body{
+        overflow-x:hidden;
+    }
+
     #all-content{
         align-items: center;
     }
 
+    #all-content div h2{
+        text-align: center;
+    }
+
     #all-content div{
-        align-items: center;
         width:90%;
+        align-items: center;
+    }
+
+    #all-content div #description{
+        align-items: flex-start;
     }
 
     .confirm{
         width:40%;
     }
+
+
 
 }
