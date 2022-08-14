@@ -366,17 +366,42 @@ body{
 }
 
 .personal_info_forms input{
-    color:#50D074;
-    font-weight:500;
+    color:rgba(0,0,0,0.9);
+    font-weight:600;
+    font-size:16px;
     margin-top:20px;
-    height:30px;
+    height:50px;
     width:80%;
     border:0px;
+    border-radius:50px;
+    padding-left:30px;
+    background-color:rgba(255, 255, 255, 0.95);
+}
+
+.personal_info_forms input[type=text]{
+    color:#50D074;
+}
+
+.personal_info_forms input::-webkit-input-placeholder  {
+    
+    font-weight:500;
+}
+
+textarea:focus, input:focus{
+    outline: none;
 }
 
 .personal_info_forms button{
     margin-top:40px;
 }
+
+.personal_info_forms h2{
+    font-family: 'Righteous', cursive;
+    font-size:40px;
+    color:white;
+    margin-bottom:70px;
+}
+
 
 @media(min-width:600px){
     body{
