@@ -20,49 +20,100 @@ function verifyAllSelected(){
     }
 }
 
+function select(nomeClasse){
+        //getting the name of the class
+        let nameclass = nomeClasse.className;
+        //a class só pega no seletor com ponto. ex: ".nomedaclasse"
+        //Se o elemento tiver varias class, ela tem que estar formatada sem espaço entre elas...
+        //ex: ".class1.class2.class3..."
+        //split na nameclass e fazer um for concatenando com pontos
+        let vnameclass = nameclass.split(" ");
+        nameclass = "";
+        for(let i=0; i<vnameclass.length;i++){
+            nameclass += "." + vnameclass[i] + "";
+        }
+    
+        //nameclass = nameclass.replace("  "," .");
+        //alert(nameclass);
+    
+    
+        //getting the section <<food/drink/desert>>
+        const section = nomeClasse.parentElement.parentElement.id;
+    
+        //getting the card
+        const seletor_card =  "#"+ section + " .card-selected";
+        const cardselected_food = document.querySelector(seletor_card);
+        //alert(seletor_card);
+    
+        //getting icon
+        const seletor_icon = "#"+ section + " .card-selected ion-icon";
+        //alert(seletor_icon);
+        const icon_showing = document.querySelector(seletor_icon);
+    
+        //firt time enter - if
+        if(cardselected_food != null){  
+        //if(seletor.classList.contains("card-selected") != null){  
+            //alert("entra");
+            cardselected_food.classList.remove("card-selected");
+            icon_showing.classList.add("display-none");
+        }
+    
+        let seletorCheck = nameclass + " ion-icon";
+        //alert(seletorCheck);
+        //let seletorCheck = nomeClasse + " ion-icon";
+        check = document.querySelector(seletorCheck);
+        check.classList.remove('display-none');
+    
+        const card = document.querySelector(nameclass);
+        card.classList.add('card-selected');
+    
+        //save the name of the food
+        //  .card1_food div h3
+        //const seletor_food = nomeClasse + " div h3 .food_name_card";
+        const seletor_food = nameclass + " #description > h3";
+        food_name = document.querySelector(seletor_food).innerHTML;
+    
+        /*
+        if(section=="food"){
+            //colocar esse food name no confirm card
+            document.querySelector(".confirm div .food_name_confirm").innerHTML = food_name;
+        }else if(section=="drink"){
+             //colocar esse food name no confirm card
+             document.querySelector(".confirm div .drink_name_confirm").innerHTML = food_name;
+        }*/
 
+          //colocar esse food name no confirm card
+          document.querySelector(`.confirm div .${section}_name_confirm`).innerHTML = food_name;
+    
+        
+    
+        //getting food price
+        const seletor = nameclass + " .price";
+        const price = document.querySelector(seletor).innerHTML;
+        //global var
+        price_number = Number(price);
+    
+        //colocar esse food name no confirm card
+        document.querySelector(`.confirm div .${section}_price`).innerHTML = price;
+        
+        //global var
+        price_number = parseFloat(price.replace(',','.'));
+        
+        if(section =="food"){
+            food_price = price_number;
+        }else if(section =="drink"){
+            drink_price = price_number;
+        }else if(section =="desert"){
+            desert_price = price_number;
+        }
+
+        verifyAllSelected();
+}
+
+/*
 function select_food(nomeClasse){
     
-    const cardselected_food = document.querySelector("#food .card-selected");
-    const icon_showing = document.querySelector("#food .card-selected ion-icon");
-    
-    //firt time enter - if
-    if(cardselected_food != null){  
-        //alert("entra");
-        cardselected_food.classList.remove("card-selected");
-        icon_showing.classList.add("display-none");
-    }
-
-    let seletorCheck = nomeClasse + " ion-icon";
-    seletorCheck = document.querySelector(seletorCheck);
-    seletorCheck.classList.remove('display-none');
-
-    const card = document.querySelector(nomeClasse);
-    card.classList.add('card-selected');
-
-    //save the name of the food
-    //  .card1_food div h3
-    //const seletor_food = nomeClasse + " div h3 .food_name_card";
-    const seletor_food = nomeClasse + " #description > h3";
-    food_name = document.querySelector(seletor_food).innerHTML;
-
-    //colocar esse food name no confirm card
-    document.querySelector(".confirm div .food_name_confirm").innerHTML = food_name;
-    //foodname nao esta recebendo o texto
-
-    
-
-    //getting food price
-    const seletor = nomeClasse + " .price";
-    const price = document.querySelector(seletor).innerHTML;
-    //global var
-    food_price = Number(price);
-
-    //colocar esse food name no confirm card
-    document.querySelector(".confirm div .food_price").innerHTML = price;
-
-    //global var
-    food_price = parseFloat(price.replace(',','.'));
+    select(nomeClasse);
 
     //free button when 3 are selected
     verifyAllSelected();
@@ -72,40 +123,7 @@ function select_food(nomeClasse){
 
 function select_drink(nomeClasse){
 
-    const cardselected_drink = document.querySelector("#drink .card-selected");
-    const icon_showing = document.querySelector("#drink .card-selected ion-icon");
-    //firt time enter - if
-    if(cardselected_drink != null){
-        //alert("entra");
-        cardselected_drink.classList.remove("card-selected");
-        icon_showing.classList.add("display-none");
-    }
-
-    let seletorCheck = nomeClasse + " ion-icon";
-    seletorCheck = document.querySelector(seletorCheck);
-    seletorCheck.classList.remove('display-none');
-
-    const card = document.querySelector(nomeClasse);
-    card.classList.add('card-selected');
-
-
-    //get the name of the drink
-    const seletor_drink = nomeClasse + " #description > h3";
-    drink_name = document.querySelector(seletor_drink).innerHTML;
-
-    //colocar esse drink name no confirm card
-    document.querySelector(".confirm div .drink_name_confirm").innerHTML = drink_name;
-
-    //getting drink price
-    const seletor = nomeClasse + " .price";
-    const price = document.querySelector(seletor).innerHTML;
-
-    //colocar esse drink name no confirm card
-    document.querySelector(".confirm div .drink_price").innerHTML = price;
-    
-
-    //global var
-    drink_price = parseFloat(price.replace(',','.'));
+    select(nomeClasse);
 
     //free button when 3 are selected
     verifyAllSelected();
@@ -115,44 +133,12 @@ function select_drink(nomeClasse){
 
 function select_desert(nomeClasse){
 
-    const cardselected_desert = document.querySelector("#desert .card-selected");
-    const icon_showing = document.querySelector("#desert .card-selected ion-icon");
-    //firt time enter - if
-    if(cardselected_desert != null){
-        //alert("entra");
-        cardselected_desert.classList.remove("card-selected");
-        icon_showing.classList.add("display-none");
-    }
-
-    let seletorCheck = nomeClasse + " ion-icon";
-    seletorCheck = document.querySelector(seletorCheck);
-    seletorCheck.classList.remove('display-none');
-
-    const card = document.querySelector(nomeClasse);
-    card.classList.add('card-selected');
-
-    //get the name of the desert
-    const seletor_desert = nomeClasse + " #description > h3";
-    desert_name = document.querySelector(seletor_desert).innerHTML;
-
-    //colocar esse food name no confirm card
-    document.querySelector(".confirm div .desert_name_confirm").innerHTML = desert_name;
-
-    //getting food price
-    const seletor = nomeClasse + " .price";
-    const price = document.querySelector(seletor).innerHTML;
-
-    //colocar esse food name no confirm card
-    document.querySelector(".confirm div .desert_price").innerHTML = price;
-
-    //global var
-    //desert_price = Number.parseFloat(price.replace(',','.')).toFixed(2);
-    desert_price = parseFloat(price.replace(',','.'));
+    select(nomeClasse);
 
     //free button when 3 are selected
      verifyAllSelected();
 }
-
+*/
 
 function cta_click(){
     
@@ -233,4 +219,6 @@ function reset(){
     const blockMyButton = document.querySelector('.CTA');
     blockMyButton.classList.remove('CTA-active');
     blockMyButton.innerHTML = "Selecione os 3 itens para fechar o pedido";   
+
+    total =0;
 }

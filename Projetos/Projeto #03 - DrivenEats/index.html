@@ -33,7 +33,7 @@
             <!--div with cards of foods-->
             <div class="display-flex-row" id="cards-section1">
                 <!--card of section-->
-                <div class="card1_food card borderradius9 backgroundcolor-white display-flex-column" id="card-sells" onclick="select_food('.card1_food')">
+                <div class="card1_food card borderradius9 backgroundcolor-white display-flex-column" id="card-sells" onclick="select(this)">
                     <img class ="borderradius9" id="img-card"  src="./img/croissant.jpg">
                     <div class="display-flex-column start" id="description">
                         <h3 class="size16 fontcolor-black2 fontweight700">Croissant de Quatro Queijos</h3>
@@ -46,7 +46,7 @@
                 </div>
 
                 <!--card of section-->
-                <div class="card2_food alignitemscenter card borderradius9 backgroundcolor-white display-flex-column" id="card-sells" onclick="select_food('.card2_food')">
+                <div class="card2_food alignitemscenter card borderradius9 backgroundcolor-white display-flex-column" id="card-sells" onclick="select(this)">
                     <img class ="borderradius9 " id="img-card"  src="./img/croissant_calabresa.jpg">
                     <div class="display-flex-column start" id="description">
                         <h3 class="size16 fontcolor-black2 fontweight700">Croissant de calabresa</h3>
@@ -59,7 +59,46 @@
                 </div>
 
                 <!--card of section-->
-                <div class="card3_food alignitemscenter card borderradius9 backgroundcolor-white display-flex-column" id="card-sells" onclick="select_food('.card3_food')">
+                <div class="card3_food alignitemscenter card borderradius9 backgroundcolor-white display-flex-column" id="card-sells" onclick="select(this)">
+                    <img class ="borderradius9 " id="img-card"  src="./img/croissant_frango.jpg">
+                    <div class="display-flex-column" id="description">
+                        <h3 class="size16 fontcolor-black2 fontweight700">Croissant de Frango</h3>
+                        <p class="size15 fontcolor-gray fontweight300">Pacote com 6un</p>
+                        <div class="display-flex-row width100 spacebet-h ">
+                            <h3 class="size16 fontcolor-black1">R$<span class="price">25,50</span></h3>
+                            <ion-icon class="size16 fontcolor-secundary display-none" name="checkmark-circle" ></ion-icon>
+                        </div>
+                    </div>
+                </div>
+
+                <!--card of section-->
+                <div class="card4_food card borderradius9 backgroundcolor-white display-flex-column" id="card-sells" onclick="select(this)">
+                    <img class ="borderradius9" id="img-card"  src="./img/croissant.jpg">
+                    <div class="display-flex-column start" id="description">
+                        <h3 class="size16 fontcolor-black2 fontweight700">Croissant de Quatro Queijos</h3>
+                        <p class="size15 fontcolor-gray fontweight300">Pacote com 6un</p>
+                        <div class="display-flex-row width100 spacebet-h ">
+                            <h3 class="size16 fontcolor-black1">R$<span class="price">25,00</span></h3>
+                            <ion-icon class ="display-none size16 fontcolor-secundary " name="checkmark-circle" ></ion-icon>
+                        </div>
+                    </div>
+                </div>
+
+                <!--card of section-->
+                <div class="card5_food alignitemscenter card borderradius9 backgroundcolor-white display-flex-column" id="card-sells" onclick="select(this)">
+                    <img class ="borderradius9 " id="img-card"  src="./img/croissant_calabresa.jpg">
+                    <div class="display-flex-column start" id="description">
+                        <h3 class="size16 fontcolor-black2 fontweight700">Croissant de calabresa</h3>
+                        <p class="size15 fontcolor-gray fontweight300">Pacote com 6un</p>
+                        <div class="display-flex-row width100 spacebet-h ">
+                            <h3 class="size16 fontcolor-black1">R$<span class="price">24,50</span></h3>
+                            <ion-icon class="size16 fontcolor-secundary display-none" name="checkmark-circle" ></ion-icon>
+                        </div>
+                    </div>
+                </div>
+
+                <!--card of section-->
+                <div class="card6_food alignitemscenter card borderradius9 backgroundcolor-white display-flex-column" id="card-sells" onclick="select(this)">
                     <img class ="borderradius9 " id="img-card"  src="./img/croissant_frango.jpg">
                     <div class="display-flex-column" id="description">
                         <h3 class="size16 fontcolor-black2 fontweight700">Croissant de Frango</h3>
@@ -80,7 +119,7 @@
             <h2 class="size26 fontcolor-black2 font-family-title">Segundo, a bebida</h2>
             <div class="display-flex-row" id="cards-section1">
                 <!--card of section-->
-                <div class="card1_drink alignitemscenter card borderradius9 backgroundcolor-white display-flex-column" id="card-sells"  onclick="select_drink('.card1_drink')">
+                <div class="card1_drink alignitemscenter card borderradius9 backgroundcolor-white display-flex-column" id="card-sells"  onclick="select(this)">
                     <img class ="borderradius9 " id="img-card"  src="./img/cafe.jpg">
                     <div class="display-flex-column" id="description">
                         <h3 class="size16 fontcolor-black2 fontweight700">Café Coado</h3>
@@ -93,7 +132,7 @@
                 </div>
 
                 <!--card of section-->
-                <div class="card2_drink alignitemscenter card borderradius9 backgroundcolor-white display-flex-column" id="card-sells" onclick="select_drink('.card2_drink')">
+                <div class="card2_drink alignitemscenter card borderradius9 backgroundcolor-white display-flex-column" id="card-sells" onclick="select(this)">
                     <img class ="borderradius9 " id="img-card"  src="./img/sucoDeLaranja.jpg">
                     <div class="display-flex-column" id="description">
                         <h3 class="size16 fontcolor-black2 fontweight700">Suco de Laranja</h3>
@@ -106,7 +145,7 @@
                 </div>
 
                 <!--card of section-->
-                <div  class="card3_drink alignitemscenter card borderradius9 backgroundcolor-white display-flex-column" id="card-sells" onclick="select_drink('.card3_drink')">
+                <div  class="card3_drink alignitemscenter card borderradius9 backgroundcolor-white display-flex-column" id="card-sells" onclick="select(this)">
                     <img class ="borderradius9 " id="img-card"  src="./img/sucoDeMelancia.jpg">
                     <div class="display-flex-column" id="description">
                         <h3 class="size16 fontcolor-black2 fontweight700">Suco de Melancia</h3>
@@ -127,7 +166,7 @@
                     <h2 class="size26 fontcolor-black2 font-family-title">Por último, o doce</h2>
                     <div class="display-flex-row" id="cards-section1">
                         <!--card of section-->
-                        <div class="card1_desert alignitemscenter card borderradius9 backgroundcolor-white display-flex-column" id="card-sells" onclick="select_desert('.card1_desert')">
+                        <div class="card1_desert alignitemscenter card borderradius9 backgroundcolor-white display-flex-column" id="card-sells" onclick="select(this)">
                             <img class ="borderradius9 " id="img-card"  src="./img/croissant_chocolate.jpg">
                             <div class="display-flex-column" id="description">
                                 <h3 class="size16 fontcolor-black2 fontweight700">Croissant de chocolate</h3>
@@ -140,7 +179,7 @@
                         </div>
         
                         <!--card of section-->
-                        <div class="card2_desert alignitemscenter card borderradius9 backgroundcolor-white display-flex-column" id="card-sells" onclick="select_desert('.card2_desert')">
+                        <div class="card2_desert alignitemscenter card borderradius9 backgroundcolor-white display-flex-column" id="card-sells" onclick="select(this)">
                             <img class ="borderradius9 " id="img-card"  src="./img/croissant_nutella.jpg">
                             <div class="display-flex-column" id="description">
                                 <h3 class="size16 fontcolor-black2 fontweight700">Croissant de Nutella</h3>
@@ -153,7 +192,7 @@
                         </div>
         
                         <!--card of section-->
-                        <div class="card3_desert alignitemscenter card borderradius9 backgroundcolor-white display-flex-column" id="card-sells" onclick="select_desert('.card3_desert')">
+                        <div class="card3_desert alignitemscenter card borderradius9 backgroundcolor-white display-flex-column" id="card-sells" onclick="select(this)">
                             <img class ="borderradius9 " id="img-card"  src="./img/croissant_goiabada.jpg">
                             <div class="display-flex-column" id="description">
                                 <h3 class="size16 fontcolor-black2 fontweight700">Croissant de Goiabada</h3>
@@ -168,6 +207,8 @@
                     </div>
         
         </div><!--end of section1-->
+
+        
 
     </div>
     

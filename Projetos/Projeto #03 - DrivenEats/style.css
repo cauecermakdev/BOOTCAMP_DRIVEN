@@ -340,3 +340,20 @@ body{
 .display-none{
     display:none;
 }
+
+
+@media(min-width:600px){
+    #all-content{
+        align-items: center;
+    }
+
+    #all-content div{
+        align-items: center;
+        width:90%;
+    }
+
+    .confirm{
+        width:40%;
+    }
+
+}
