@@ -220,10 +220,22 @@
             <div><p class="drink_name_confirm">Coquinha gelada</p><p class="drink_price">4,90</p></div>
             <div><p class="desert_name_confirm">Pudim</p><p class="desert_price">7,90</p></div>
             <div><p class="fontweight700">TOTAL</p><p class="total_price fontweight700">R$27,70</p></div>
-            <button class="fontweight700 size22" onclick="sendWhatsApp();">Tudo Certo, pode pedir!</button>
+            <!--<button class="fontweight700 size22" onclick="sendWhatsApp();">Tudo Certo, pode pedir!</button>-->
+            <button class="fontweight700 size22" onclick="confirm();">Tudo Certo, pode pedir!</button>
             <p class="size20 fontweight700" onclick="reset();">Cancelar</p>
         </div>
     </div>
+
+        <!-- email adress card-->
+        <div class="confirm_dad2 display-none">
+        <div class="personal_info_forms ">
+            <div class= "confirm borderradius9 display-flex-column alignitemscenter fontcolor-white">
+                <input placeholder ="Nome" type="text" class="name">
+                <input placeholder ="Endereço" type="text" class="adress">
+                <button class="fontweight700 size22" onclick="sendWhatsApp();">Confirmar</button>
+            </div>
+        </div>
+        </div>
 
 
     <div class="footer centralized">

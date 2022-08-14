@@ -314,6 +314,17 @@ body{
     z-index: 999;
 }
 
+.confirm_dad2{
+    background-color:rgba(255, 255, 255, 0.9);
+    width:100%;
+    height:100%;
+    position:fixed;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    z-index: 999;
+}
+
 .confirm > div{
     display:flex;
     justify-content: space-between;
@@ -341,6 +352,31 @@ body{
     display:none;
 }
 
+.personal_info_forms{
+    z-index: 1000;
+    position:fixed;
+    width:100%;
+    height:100%;
+    background-color:#50D074;
+    padding:20px 0px;
+    font-size:22px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.personal_info_forms input{
+    color:#50D074;
+    font-weight:500;
+    margin-top:20px;
+    height:30px;
+    width:80%;
+    border:0px;
+}
+
+.personal_info_forms button{
+    margin-top:40px;
+}
 
 @media(min-width:600px){
     body{

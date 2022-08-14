@@ -114,10 +114,21 @@ function cta_click(){
 
 }
 
+function confirmPersonalInformations(){
+
+}
+
+function confirm(){
+    const selector = document.querySelector(".confirm_dad2");
+    selector.classList.remove("display-none");
+}
+
 function sendWhatsApp(){
     
-    let userName = prompt("Seu Nome:");
-    let adress = prompt("Seu Endereço:");
+    //let userName = prompt("Seu Nome:");
+    //let adress = prompt("Seu Endereço:");
+    let userName = document.querySelector(".personal_info_forms .name").value;
+    let adress = document.querySelector(".personal_info_forms .adress").value;
 
     //preferência pagamento PIX ou cartão
 
