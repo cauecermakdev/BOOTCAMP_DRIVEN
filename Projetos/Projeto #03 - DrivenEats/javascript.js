@@ -193,10 +193,12 @@ function sendWhatsApp(){
     today = dd + '/' + mm + '/' + yyyy;
 
     //encodeURI(string);
-    //let message = "my message" 
-    //let urlmessage = encodeURI(message);
+    //let message = `*PEDIDO*%20-%20*${userName}*%0A_${today}_%0A%0A${food_name}:%20R$${food_price}%0A${drink_name}:%20R$${drink_price}%0A${desert_name}:%20R$${desert_price}%0A%0A*TOTAL*:%20${total}%0A%0AEndereço:%20${adress}%0A%0A_Muito%20Obrigado%20Pelo%20Seu%20Pedido_`; 
+    let message = `*Olá, gostaria de fazer o pedido:*\n- Prato: ${food_name}\n- Bebida: ${drink_name}\n- Sobremesa: ${desert_name}\n*TOTAL*: R$ ${total.toFixed(2)}\n\nNome: ${userName}\nEndereço: ${adress}\n\n_Muito Obrigado Pelo Seu Pedido_\n_${today}_`; 
+    let urlmessage = encodeURI(message);
 
-    let link = `https://api.whatsapp.com/send?phone=5535991819444&text=*PEDIDO*%20-%20*${userName}*%0A_${today}_%0A%0A${food_name}:%20R$${food_price}%0A${drink_name}:%20R$${drink_price}%0A${desert_name}:%20R$${desert_price}%0A%0A*TOTAL*:%20${total}%0A%0AEndereço:%20${adress}%0A%0A_Muito%20Obrigado%20Pelo%20Seu%20Pedido_`;
+
+    let link = `https://api.whatsapp.com/send?phone=5535991819444&text=${urlmessage}`;
     window.open(link);
 }
 
@@ -230,6 +232,5 @@ function reset(){
     //desativar button
     const blockMyButton = document.querySelector('.CTA');
     blockMyButton.classList.remove('CTA-active');
-    blockMyButton.innerHTML = "Selecione os 3 itens para fechar o pedido";
-    
+    blockMyButton.innerHTML = "Selecione os 3 itens para fechar o pedido";   
 }
