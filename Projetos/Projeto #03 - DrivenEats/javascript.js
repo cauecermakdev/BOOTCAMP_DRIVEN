@@ -140,8 +140,6 @@ function sendWhatsApp(){
     today = dd + '/' + mm + '/' + yyyy;
     
 
-    
-
     //encodeURI(string);
     //let message = `*PEDIDO*%20-%20*${userName}*%0A_${today}_%0A%0A${food_name}:%20R$${food_price}%0A${drink_name}:%20R$${drink_price}%0A${desert_name}:%20R$${desert_price}%0A%0A*TOTAL*:%20${total}%0A%0AEndereço:%20${adress}%0A%0A_Muito%20Obrigado%20Pelo%20Seu%20Pedido_`; 
     let message = `*Olá, gostaria de fazer o pedido:*\n- Prato: ${food_name}\n- Bebida: ${drink_name}\n- Sobremesa: ${desert_name}\n*TOTAL*: R$ ${total.toFixed(2).replace('.',',')}\n\nNome: ${userName}\nEndereço: ${adress}\n\n_Muito Obrigado Pelo Seu Pedido_\n_${today}_`; 
@@ -159,7 +157,7 @@ function reset(){
     const icon_showing = document.querySelector("#food .card-selected ion-icon");
 
     cardselected_food.classList.remove("card-selected");
-    icon_showing.classList.add("display-none");
+    icon_showing.classList.add("display-none"); 
 
     //reset drink section
     const cardselected_drink = document.querySelector("#drink .card-selected");
