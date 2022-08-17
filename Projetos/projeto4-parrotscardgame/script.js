@@ -11,42 +11,63 @@ while(numero_cards%2 != 0){
 }
 
 
-//cria minhas cartas viradas pra baixo
-//pegar elemento lista
-let imagem = "./img/1.gif";
-//document.querySelector("ul").innerHTML = `<li><div class="card"><img src=${imagem}></div></li>`;
 
-const card_front = `<li><div class="card" onclick="turn(this)"><img src="./img/front.png" alt=""></div></li>`;
+//cria array e embaralha
 let array_img_indices = [];
-
-//crio minhas cartas viradas pra baixo
 for(let i = 0; i < numero_cards;i++){
-    document.querySelector(".front").innerHTML += card_front;
-    
-    //colocando numeros de cards no meu vetor para usar pra colocar a imagem  
-        array_img_indices.push(i);
-
+    array_img_indices.push(i);
 }
-alert(array_img_indices);
 
-
-
-//cria minhas cartas viradas pra cima
+//embaralha
 array_img_indices.sort(comparador); // Após esta linha, a minhaArray estará embaralhada
-alert(array_img_indices);
 
-let card_back ="";
-let img_name ="";
+let img_name = "";
+let img_id = 0;
+//crio minhas cartas com duas imagens sendo que a back está escondida
 for(let i = 0; i < numero_cards;i++){
     img_name = `mem (${array_img_indices[i]+1}).gif`;
-    //mem (13).gif
-    card_back = `<li><div class="card" onclick="turn(this)"><img src="./img/${img_name}" alt=""></div></li>`;
-    document.querySelector(".back").innerHTML += card_back;
+    img_id = array_img_indices[i]+1;
+    let card = `<li><div class="card" onclick="turn(this)"><img src="./img/front.png" alt=""><img class ="escondido" id="${img_id}" src="./img/${img_name}" alt=""></div></li>`;
+    
+    document.querySelector("ul").innerHTML += card;  
 }
+
 
 
 function turn(elemento){
-    let carta = elemento;
-    console.log(carta);
-    elemento.classList.toggle("esconde");   
+        
+    //front
+    const carta_front = elemento.children[0];   
+    //back
+    const carta_back = elemento.children[1];   
+
+    //coloco escondido no front 
+    carta_front.classList.toggle("escondido");
+
+    //tiro escondido do back
+    carta_back.classList.toggle("escondido");
+
+
+
+    /*
+    //é a primeira carta?
+    if(document.querySelector(".ativo") == false){
+         //coloca ativo
+        elemento.classList.add("ativo");
+
+        //mostra back
+
+
+    }
+   */
+    
+    
+
+
+
+    
+
 }
+
+
+
